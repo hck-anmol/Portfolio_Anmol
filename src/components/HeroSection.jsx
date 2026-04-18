@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const roles = ['MERN Stack Developer', 'React Enthusiast', 'Problem Solver', 'Full-Stack Engineer', 'UI Craftsman'];
+const roles = ['MERN Stack Developer', 'AI/ML Enthusiast', 'Problem Solver', 'Full-Stack Engineer'];
 
 function useTypingEffect(words, typingSpeed = 80, deleteSpeed = 40, pause = 1800) {
   const [text, setText]         = useState('');
