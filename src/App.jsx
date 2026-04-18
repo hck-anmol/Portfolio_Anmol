@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -15,6 +15,16 @@ import HomePage from './pages/HomePage.jsx';
 import JourneyPage from './pages/JourneyPage.jsx';
 import ProjectDetailPage from './pages/ProjectDetailPage.jsx';
 
+function ScrollToTopOnRouteChange() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname]);
+
+  return null;
+}
+
 function AppRoutes() {
   const location = useLocation();
   // Don't render global space background on Journey page — it has its own 3D scene
@@ -27,8 +37,8 @@ function AppRoutes() {
 
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route path="/"            element={<HomePage />} />
-          <Route path="/journey"     element={<JourneyPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/journey" element={<JourneyPage />} />
           <Route path="/project/:id" element={<ProjectDetailPage />} />
         </Routes>
       </AnimatePresence>
@@ -55,6 +65,7 @@ function BackgroundLayer() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTopOnRouteChange />
       <Loader />
       <CustomCursor />
       <Navbar />

@@ -212,34 +212,7 @@ export default function ProjectDetailPage() {
                 </motion.div>
 
                 {/* Quick Links */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  transition={{ delay: 0.15 }}
-                  style={{
-                    padding: '28px', borderRadius: '24px',
-                    background: 'var(--glass)', border: '1px solid var(--border)',
-                    backdropFilter: 'blur(16px)', marginBottom: '28px',
-                  }}
-                >
-                  <h2 style={{ fontFamily: 'var(--heading)', fontSize: '18px', fontWeight: 700, marginBottom: '16px', color: 'var(--text)' }}>
-                    🔗 Links
-                  </h2>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    {project.github && (
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" data-hover
-                        style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', background: 'rgba(255,255,255,.04)', border: '1px solid var(--border)', borderRadius: '12px', fontSize: '14px', color: 'var(--text)', transition: 'border-color 0.2s' }}
-                        onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(139,92,246,0.5)'}
-                        onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
-                      >
-                        ⭐ <span style={{ fontFamily: 'var(--mono)' }}>GitHub Repository</span>
-                      </a>
-                    )}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', background: 'rgba(255,255,255,.04)', border: '1px solid var(--border)', borderRadius: '12px', fontSize: '14px', color: 'var(--muted)' }}>
-                      🚀 <span style={{ fontFamily: 'var(--mono)' }}>Live Demo — Coming Soon</span>
-                    </div>
-                  </div>
-                </motion.div>
-
+                
                 {/* Back button */}
                 <motion.button
                   onClick={() => navigate(-1)}

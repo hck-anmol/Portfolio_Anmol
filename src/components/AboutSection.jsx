@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import anmolPhoto from '../assets/anmol.jpeg';
 
 function StatCard({ num, label }) {
   return (
@@ -65,9 +66,18 @@ export default function AboutSection() {
                 background: 'radial-gradient(circle at 40% 35%, rgba(59,130,246,0.08) 0%, rgba(124,58,237,0.05) 60%, transparent 100%)',
                 border: '1px solid rgba(255,255,255,0.05)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '80px',
+                overflow: 'hidden',
               }}>
-                <span style={{ fontFamily: 'var(--mono)', fontSize: '28px', fontWeight: 700, color: '#7c3aed', opacity: 0.7 }}>DEV</span>
+                <img
+                  src={anmolPhoto}
+                  alt="Anmol"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center top',
+                  }}
+                />
               </div>
 
               {/* Slow-spinning single orbit dot */}

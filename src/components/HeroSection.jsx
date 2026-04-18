@@ -199,7 +199,7 @@ export default function HeroSection() {
 
       {/* Scroll hint */}
       <div style={{
-        position: 'absolute', bottom: '32px', left: '50%',
+        position: 'absolute', bottom: '-10px', left: '51%',
         transform: 'translateX(-50%)',
         display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
         color: '#334155', fontSize: '11px',
