@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { projects, typeColorMap } from '../data/portfolio.js';
+import gitLogo from '../assets/gitlogo.webp';
 
 function TypeTag({ label, colorKey }) {
   const c = typeColorMap[colorKey] || typeColorMap.purple;
@@ -99,8 +100,11 @@ function ProjectCard({ project, index }) {
           {project.github && (
             <motion.a href={project.github} target="_blank" rel="noopener noreferrer" data-hover
               whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-              style={{ flex: 1, padding: '9px', background: 'rgba(255,255,255,.07)', border: '1px solid var(--border)', borderRadius: '10px', fontSize: '12px', fontWeight: 600, textAlign: 'center', color: 'var(--text)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px' }}
-            >GitHub</motion.a>
+              style={{ flex: 1, padding: '9px', background: 'rgba(255,255,255,.07)', border: '1px solid var(--border)', borderRadius: '10px', fontSize: '12px', fontWeight: 600, textAlign: 'center', color: 'var(--text)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
+            >
+              <img src={gitLogo} alt="GitHub" style={{ width: 15, height: 15, objectFit: 'contain' }} />
+              GitHub
+            </motion.a>
           )}
           <motion.button
             onClick={() => navigate(`/project/${project.id}`)}
@@ -151,8 +155,9 @@ export default function ProjectsSection() {
             href="https://github.com/hck-anmol" target="_blank" rel="noopener noreferrer"
             data-hover
             whileHover={{ scale: 1.05, boxShadow: '0 12px 40px rgba(139,92,246,0.4)' }}
-            style={{ padding: '14px 32px', background: 'linear-gradient(135deg, var(--blue), var(--purple))', borderRadius: '50px', fontSize: '14px', fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center', gap: '8px' }}
+            style={{ padding: '14px 32px', background: 'linear-gradient(135deg, var(--blue), var(--purple))', borderRadius: '50px', fontSize: '14px', fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center', gap: '10px' }}
           >
+            <img src={gitLogo} alt="GitHub" style={{ width: 20, height: 20, objectFit: 'contain' }} />
             View All on GitHub
           </motion.a>
           <motion.button

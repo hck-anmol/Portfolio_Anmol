@@ -1,16 +1,21 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+import emailLogo from '../assets/email.webp';
+import locationIcon from '../assets/location.png';
+import instituteIcon from '../assets/institute.png';
+import gitLogo from '../assets/gitlogo.webp';
+import linkdinLogo from '../assets/linkdin.webp';
 
 const contactItems = [
-  { icon: null, label: 'Email', value: 'anmolkrj006@gmail.com', href: 'mailto:anmolkrj006@gmail.com' },
-  { icon: null, label: 'Location', value: 'Gandhinagar, Gujarat, India', href: null },
-  { icon: null, label: 'Institution', value: 'IIIT Vadodara', href: null },
-  { icon: null, label: 'Status', value: 'Open to Opportunities', href: null, green: true },
+  { icon: emailLogo,    label: 'Email',       value: 'anmolkrj006@gmail.com',    href: 'mailto:anmolkrj006@gmail.com' },
+  { icon: locationIcon, label: 'Location',    value: 'Gandhinagar, Gujarat, India', href: null },
+  { icon: instituteIcon,label: 'Institution', value: 'IIIT Vadodara',              href: null },
+  { icon: null,         label: 'Status',      value: 'Open to Opportunities',      href: null, green: true },
 ];
 
 const socials = [
-  { label: 'GitHub', href: 'https://github.com/hck-anmol', color: 'var(--purple)' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anmolkrjha006/', color: 'var(--blue)' },
+  { label: 'GitHub',   logo: gitLogo,    href: 'https://github.com/hck-anmol',                color: 'var(--purple)' },
+  { label: 'LinkedIn', logo: linkdinLogo, href: 'https://www.linkedin.com/in/anmolkrjha006/', color: 'var(--blue)' },
 ];
 
 export default function ContactSection() {
@@ -91,9 +96,12 @@ export default function ContactSection() {
                   background: 'linear-gradient(135deg, var(--blue), var(--purple))',
                   borderRadius: '12px',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '13px', fontWeight: 700, color: '#fff',
-                  fontFamily: 'var(--mono)',
-                }}>{item.label.slice(0, 2).toUpperCase()}</div>
+                }}>
+                  {item.icon
+                    ? <img src={item.icon} alt={item.label} style={{ width: 22, height: 22, objectFit: 'contain' }} />
+                    : <span style={{ fontSize: '18px' }}>{item.label === 'Status' ? '🟢' : '?'}</span>
+                  }
+                </div>
                 <div>
                   <div style={{ fontSize: '11px', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '3px' }}>
                     {item.label}
@@ -132,10 +140,11 @@ export default function ContactSection() {
                       borderRadius: '10px',
                       fontSize: '13px', fontWeight: 600,
                       color: 'var(--text)',
-                      display: 'flex', alignItems: 'center', gap: '6px',
+                      display: 'flex', alignItems: 'center', gap: '8px',
                       transition: 'border-color 0.2s, transform 0.2s',
                     }}
                   >
+                    <img src={s.logo} alt={s.label} style={{ width: 18, height: 18, objectFit: 'contain' }} />
                     {s.label}
                   </motion.a>
                 ))}

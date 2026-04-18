@@ -3,6 +3,16 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { projects, typeColorMap } from '../data/portfolio.js';
 import Footer from '../components/Footer.jsx';
+import gitLogo from '../assets/gitlogo.webp';
+import navpImg from '../assets/navp.png';
+import sketchaaImg from '../assets/sketchaa.png';
+import moviebuzzImg from '../assets/moviebuzz.svg';
+
+const projectImages = {
+  navastitva: navpImg,
+  sketchaa:   sketchaaImg,
+  moviebuzz:  moviebuzzImg,
+};
 
 function FeatureItem({ text }) {
   return (
@@ -92,8 +102,13 @@ export default function ProjectDetailPage() {
                   )}
                 </div>
 
-                {/* Emoji + Title */}
-                <div style={{ fontSize: '56px', marginBottom: '12px' }}>{project.emoji}</div>
+                {/* Project image or emoji */}
+                <div style={{ marginBottom: '12px', width: 64, height: 64, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {projectImages[project.id]
+                    ? <img src={projectImages[project.id]} alt={project.title} style={{ width: 60, height: 60, objectFit: 'contain', borderRadius: '12px' }} />
+                    : <span style={{ fontSize: '56px' }}>{project.emoji}</span>
+                  }
+                </div>
                 <h1 style={{
                   fontFamily: 'var(--heading)',
                   fontSize: 'clamp(28px, 5vw, 56px)',
@@ -110,16 +125,17 @@ export default function ProjectDetailPage() {
                   {project.github && (
                     <motion.a href={project.github} target="_blank" rel="noopener noreferrer" data-hover
                       whileHover={{ scale: 1.05, y: -2 }}
-                      style={{ padding: '12px 28px', background: 'rgba(255,255,255,.07)', border: '1px solid var(--border)', borderRadius: '50px', fontSize: '14px', fontWeight: 600, color: 'var(--text)', display: 'flex', alignItems: 'center', gap: '8px' }}
+                      style={{ padding: '12px 28px', background: 'rgba(255,255,255,.07)', border: '1px solid var(--border)', borderRadius: '50px', fontSize: '14px', fontWeight: 600, color: 'var(--text)', display: 'flex', alignItems: 'center', gap: '10px' }}
                     >
-                      ⭐ View on GitHub
+                      <img src={gitLogo} alt="GitHub" style={{ width: 20, height: 20, objectFit: 'contain' }} />
+                      View on GitHub
                     </motion.a>
                   )}
                   <motion.a href={project.live || '#'} target={project.live ? '_blank' : '_self'} data-hover
                     whileHover={{ scale: 1.05, y: -2, boxShadow: '0 12px 36px rgba(139,92,246,0.4)' }}
                     style={{ padding: '12px 28px', background: 'linear-gradient(135deg, var(--blue), var(--purple))', borderRadius: '50px', fontSize: '14px', fontWeight: 600, color: '#fff', display: 'flex', alignItems: 'center', gap: '8px', opacity: project.live ? 1 : 0.7 }}
                   >
-                    🚀 {project.live ? 'Live Demo' : 'Coming Soon'}
+                    {project.live ? '🚀 Live Demo' : '⏳ Coming Soon'}
                   </motion.a>
                 </div>
               </motion.div>
@@ -136,11 +152,14 @@ export default function ProjectDetailPage() {
                   background: `radial-gradient(circle, ${project.color}30 0%, ${project.color}10 50%, transparent 70%)`,
                   border: `2px solid ${project.color}40`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '80px',
+                  overflow: 'hidden',
                   boxShadow: `0 0 60px ${project.color}30`,
                   animation: 'planetPulse 4s ease-in-out infinite',
                 }}>
-                  {project.emoji}
+                  {projectImages[project.id]
+                    ? <img src={projectImages[project.id]} alt={project.title} style={{ width: '65%', height: '65%', objectFit: 'contain', borderRadius: '8px' }} />
+                    : <span style={{ fontSize: '80px' }}>{project.emoji}</span>
+                  }
                 </div>
               </motion.div>
             </div>
@@ -176,7 +195,7 @@ export default function ProjectDetailPage() {
                   transition={{ delay: 0.1 }}
                 >
                   <h2 style={{ fontFamily: 'var(--heading)', fontSize: '18px', fontWeight: 700, marginBottom: '20px', color: 'var(--text)' }}>
-                    ✨ Key Features
+                     Key Features
                   </h2>
                   {project.features.map(f => <FeatureItem key={f} text={f} />)}
                 </motion.div>
@@ -251,7 +270,12 @@ export default function ProjectDetailPage() {
                     onClick={() => { navigate(`/project/${op.id}`); window.scrollTo(0,0); }}
                     data-hover
                   >
-                    <div style={{ fontSize: '32px', marginBottom: '12px' }}>{op.emoji}</div>
+                    <div style={{ marginBottom: '12px', width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      {projectImages[op.id]
+                        ? <img src={projectImages[op.id]} alt={op.title} style={{ width: 36, height: 36, objectFit: 'contain', borderRadius: '8px' }} />
+                        : <span style={{ fontSize: '32px' }}>{op.emoji}</span>
+                      }
+                    </div>
                     <div style={{ fontFamily: 'var(--heading)', fontSize: '16px', fontWeight: 700, marginBottom: '8px', color: 'var(--text)' }}>{op.title}</div>
                     <p style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.6 }}>{op.shortDesc}</p>
                   </motion.div>

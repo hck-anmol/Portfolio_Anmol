@@ -231,7 +231,7 @@ export const journeyPhases = [
     title: 'Competitive Programming',
     subtitle: 'CodeChef 3⭐ · LeetCode 120+ Problems',
     description:
-      'Dived deep into competitive programming to sharpen problem-solving skills. Achieved CodeChef 3-star rating and solved 300+ problems on LeetCode spanning dynamic programming, graphs, trees, and system optimization challenges.',
+      'Dived deep into competitive programming to sharpen problem-solving skills. Achieved CodeChef 3-star rating and solved 120+ problems on LeetCode spanning dynamic programming, graphs, trees, and system optimization challenges.',
     highlights: ['CodeChef 3⭐', 'LeetCode 120+ solved', 'Codeforces rated', 'Contest participant'],
     tags: ['Dynamic Programming', 'Graphs', 'Binary Search', 'Trees', 'Greedy', 'Number Theory'],
   },

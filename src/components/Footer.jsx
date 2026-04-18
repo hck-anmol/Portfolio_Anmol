@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
+import gitLogo from '../assets/gitlogo.webp';
+import linkdinLogo from '../assets/linkdin.webp';
+import emailLogo from '../assets/email.webp';
 
 const socials = [
-  { icon: 'GH', title: 'GitHub', href: 'https://github.com/hck-anmol' },
-  { icon: 'LI', title: 'LinkedIn', href: '#' },
-  { icon: 'TW', title: 'Twitter', href: '#' },
-  { icon: '@', title: 'Email', href: 'mailto:anmol@iiitvadodara.ac.in' },
+  { icon: gitLogo,    title: 'GitHub',   href: 'https://github.com/hck-anmol' },
+  { icon: linkdinLogo, title: 'LinkedIn', href: 'https://www.linkedin.com/in/anmolkrj006/' },
+  { icon: emailLogo,  title: 'Email',    href: 'mailto:anmolkrj006@gmail.com' },
 ];
 
 const navLinks = ['About', 'Skills', 'Projects', 'Contact'];
@@ -52,10 +54,10 @@ export default function Footer() {
           <div>
             <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text)', marginBottom: '16px', fontFamily: 'var(--mono)', letterSpacing: '2px', textTransform: 'uppercase' }}>Contact</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <a href="mailto:anmol@iiitvadodara.ac.in" data-hover style={{ fontSize: '14px', color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font)' }}>
-                anmol@iiitvadodara.ac.in
+              <a href="mailto:anmolkrj006@gmail.com" data-hover style={{ fontSize: '14px', color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font)' }}>
+                anmolkrj006@gmail.com
               </a>
-              <span style={{ fontSize: '14px', color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font)' }}>Vadodara, Gujarat, India</span>
+              <span style={{ fontSize: '14px', color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font)' }}>Gandhinagar, Gujarat, India</span>
               <span style={{ fontSize: '14px', color: '#22c55e', display: 'flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font)' }}>
                 <span style={{ width: 7, height: 7, background: '#22c55e', borderRadius: '50%', display: 'inline-block', animation: 'pulse 2s infinite' }} />
                 Available for work
@@ -67,14 +69,16 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid var(--border)', paddingTop: '28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <p style={{ fontSize: '13px', color: 'var(--muted)', fontFamily: 'var(--font)' }}>
-            Built with <span style={{ color: 'var(--pink)' }}>♥</span> by <strong style={{ color: 'var(--text)' }}>Anmol</strong> · Powered by caffeine &amp; curiosity · © 2026
+            Built with passion by <strong style={{ color: 'var(--text)' }}>Anmol</strong> · Powered by caffeine &amp; curiosity · © 2026
           </p>
           <div style={{ display: 'flex', gap: '10px' }}>
             {socials.map(s => (
               <motion.a key={s.title} href={s.href} target={s.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer" title={s.title} data-hover
                 whileHover={{ y: -4, borderColor: 'rgba(139,92,246,0.6)', background: 'rgba(139,92,246,0.1)' }}
-                style={{ width: 38, height: 38, background: 'var(--glass)', border: '1px solid var(--border)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', transition: 'border-color 0.2s, background 0.2s' }}
-              >{s.icon}</motion.a>
+                style={{ width: 38, height: 38, background: 'var(--glass)', border: '1px solid var(--border)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'border-color 0.2s, background 0.2s' }}
+              >
+                <img src={s.icon} alt={s.title} style={{ width: 20, height: 20, objectFit: 'contain' }} />
+              </motion.a>
             ))}
           </div>
         </div>
