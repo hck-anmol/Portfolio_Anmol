@@ -20,7 +20,7 @@ export const projects = [
       'Multi-junction intelligent signal control',
       'Historical traffic pattern analysis',
     ],
-    tech: ['MERN', 'Real-Time Data','YOLOv8', 'Chart.js', 'REST APIs', 'OpenCV', 'Python', 'Arduino'],
+    tech: ['MERN', 'Real-Time Data', 'YOLOv8', 'Chart.js', 'REST APIs', 'OpenCV', 'Python', 'Arduino'],
     github: 'https://github.com/hck-anmol/TRAFF-IQ',
     live: null,
     featured: false,
@@ -70,7 +70,7 @@ export const projects = [
       'Name Mismatch Protection — Case-insensitive student name matching.',
       'MySQL-Backed Student Records — Stores profiles, grades, and attendance.'
     ],
-    tech: ['MERN Stack', 'React', 'DSA', 'SQL', 'Python', 'Cloud', 'AWS','Pdf-lib', 'mySQL'],
+    tech: ['MERN Stack', 'React', 'DSA', 'SQL', 'Python', 'Cloud', 'AWS', 'Pdf-lib', 'mySQL'],
     github: 'https://github.com/hck-anmol',
     live: null,
     featured: false,
@@ -127,6 +127,40 @@ export const projects = [
     featured: true,
     color: '#8b5cf6',
   },
+  {
+    id: 'gymkhana',
+    emoji: '🏛️',
+    title: 'Gymkhana',
+    subtitle: 'Club & Event Management Platform',
+    type: ['Full-Stack', 'Web App'],
+    typeColors: ['purple', 'pink'],
+    shortDesc: 'Centralized platform for managing college clubs, events, registrations, and results with role-based access.',
+    description:
+      'Gymkhana is a full-stack web application built to streamline club and event management within institutions. It provides role-based dashboards for admins and coordinators to manage clubs, organize events, handle registrations, and publish results, while users can explore activities, register, and track participation through a unified interface.',
+    features: [
+      'Role-based dashboards for Admins and Coordinators',
+      'Club discovery with detailed pages',
+      'Event listing, details, and scheduling system',
+      'User authentication and profile management (Clerk)',
+      'Event registration and participation tracking',
+      'Results publishing and viewing system',
+      'Analytics and statistics dashboard (Stat cards)',
+    ],
+    tech: [
+      'React',
+      'Vite',
+      'Node.js',
+      'Express',
+      'SQL',
+      'Clerk Auth',
+      'PostCSS',
+      'Jest'
+    ],
+    github: null,
+    live: null,
+    featured: false,
+    color: '#a855f7',
+  }
 ];
 
 // ================================================================
@@ -280,18 +314,18 @@ export const journeyPhases = [
 // COLOR MAPS
 // ================================================================
 export const typeColorMap = {
-  blue:   { bg: 'rgba(59,130,246,.15)',  color: '#3b82f6', border: 'rgba(59,130,246,.25)' },
+  blue: { bg: 'rgba(59,130,246,.15)', color: '#3b82f6', border: 'rgba(59,130,246,.25)' },
   purple: { bg: 'rgba(139,92,246,.15)', color: '#8b5cf6', border: 'rgba(139,92,246,.25)' },
-  pink:   { bg: 'rgba(236,72,153,.15)', color: '#ec4899', border: 'rgba(236,72,153,.25)' },
-  cyan:   { bg: 'rgba(6,182,212,.15)',  color: '#06b6d4', border: 'rgba(6,182,212,.25)' },
-  green:  { bg: 'rgba(34,197,94,.15)',  color: '#22c55e', border: 'rgba(34,197,94,.25)' },
-  yellow: { bg: 'rgba(234,179,8,.15)',  color: '#eab308', border: 'rgba(234,179,8,.25)' },
+  pink: { bg: 'rgba(236,72,153,.15)', color: '#ec4899', border: 'rgba(236,72,153,.25)' },
+  cyan: { bg: 'rgba(6,182,212,.15)', color: '#06b6d4', border: 'rgba(6,182,212,.25)' },
+  green: { bg: 'rgba(34,197,94,.15)', color: '#22c55e', border: 'rgba(34,197,94,.25)' },
+  yellow: { bg: 'rgba(234,179,8,.15)', color: '#eab308', border: 'rgba(234,179,8,.25)' },
 };
 
 export const tagColorMap = {
-  blue:   { bg: 'rgba(59,130,246,.1)',  border: 'rgba(59,130,246,.2)',  color: '#3b82f6' },
+  blue: { bg: 'rgba(59,130,246,.1)', border: 'rgba(59,130,246,.2)', color: '#3b82f6' },
   purple: { bg: 'rgba(139,92,246,.1)', border: 'rgba(139,92,246,.2)', color: '#8b5cf6' },
-  pink:   { bg: 'rgba(236,72,153,.1)', border: 'rgba(236,72,153,.2)', color: '#ec4899' },
-  cyan:   { bg: 'rgba(6,182,212,.1)',  border: 'rgba(6,182,212,.2)',  color: '#06b6d4' },
-  green:  { bg: 'rgba(34,197,94,.1)',  border: 'rgba(34,197,94,.2)',  color: '#22c55e' },
+  pink: { bg: 'rgba(236,72,153,.1)', border: 'rgba(236,72,153,.2)', color: '#ec4899' },
+  cyan: { bg: 'rgba(6,182,212,.1)', border: 'rgba(6,182,212,.2)', color: '#06b6d4' },
+  green: { bg: 'rgba(34,197,94,.1)', border: 'rgba(34,197,94,.2)', color: '#22c55e' },
 };
