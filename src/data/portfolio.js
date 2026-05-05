@@ -123,7 +123,7 @@ export const projects = [
     ],
     tech: ['React', 'Node.js', 'Express', 'MySQL', 'JWT', 'Aiven Cloud', 'Tailwind CSS', 'Vercel', 'Render'],
     github: 'https://github.com/hck-anmol/MovieBuzz',
-    live: 'https://movie-buzz-topaz.vercel.app/',
+    live: null,
     featured: true,
     color: '#8b5cf6',
   },
