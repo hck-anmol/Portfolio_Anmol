@@ -72,7 +72,7 @@ export const projects = [
     ],
     tech: ['MERN Stack', 'React', 'DSA', 'SQL', 'Python', 'Cloud', 'AWS','Pdf-lib', 'mySQL'],
     github: 'https://github.com/hck-anmol',
-    live: 'https://certificate.nafsdc.com/',
+    live: null,
     featured: false,
     color: '#8b5cf6',
   },
