@@ -156,7 +156,7 @@ export const projects = [
       'PostCSS',
       'Jest'
     ],
-    github: null,
+    github: 'https://github.com/code-manush/gymkhana',
     live: null,
     featured: false,
     color: '#a855f7',
