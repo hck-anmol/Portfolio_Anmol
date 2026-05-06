@@ -1,3 +1,7 @@
+import navpImg from '../assets/navp.png';
+import sketchaaImg from '../assets/sketchaa.png';
+import moviebuzzImg from '../assets/moviebuzz.svg';
+
 // ================================================================
 // PROJECTS DATA (rich — used by cards AND detail pages)
 // ================================================================
@@ -31,6 +35,7 @@ export const projects = [
     emoji: '🎨',
     title: 'Sketchaa',
     subtitle: 'Real-Time Multiplayer Drawing Game',
+    image: sketchaaImg,
     type: ['Real-Time', 'Multiplayer'],
     typeColors: ['cyan', 'blue'],
     shortDesc: 'Fast-paced multiplayer draw-and-judge game with live leaderboards, in-game chat, and room management.',
@@ -81,6 +86,7 @@ export const projects = [
     emoji: '🌿',
     title: 'NavAstitva',
     subtitle: 'NGO Web Portal',
+    image: navpImg,
     type: ['NGO Platform', 'Full-Stack'],
     typeColors: ['green', 'pink'],
     shortDesc: 'Full-featured NGO web portal with hero slider, donation flow, career applications, and audit reports.',
@@ -107,6 +113,7 @@ export const projects = [
     emoji: '🎬',
     title: 'MovieBuzz',
     subtitle: 'Location-Aware Bollywood Booking Platform',
+    image: moviebuzzImg,
     type: ['Full-Stack', 'MERN'],
     typeColors: ['purple', 'pink'],
     shortDesc: 'Location-aware Bollywood movie booking with seat selection, JWT auth, cancellations, and admin dashboard.',

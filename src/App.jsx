@@ -1,75 +1,63 @@
-import { lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import './index.css';
+import Nav from './components/Nav';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Timeline from './components/Timeline';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import ProjectDetail from './components/ProjectDetail';
 
-import { usePerformance } from './hooks/usePerformance.js';
-import StarCanvas from './components/StarCanvas.jsx';  // 2D fallback
-
-// Lazy-load the heavy 3D background
-const SpaceBackground3D = lazy(() => import('./components/SpaceBackground3D.jsx'));
-
-import CustomCursor from './components/CustomCursor.jsx';
-import Loader from './components/Loader.jsx';
-import Navbar from './components/Navbar.jsx';
-import HomePage from './pages/HomePage.jsx';
-import JourneyPage from './pages/JourneyPage.jsx';
-import ProjectDetailPage from './pages/ProjectDetailPage.jsx';
-
-function ScrollToTopOnRouteChange() {
-  const { pathname } = useLocation();
-
+function HomePage() {
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-  }, [pathname]);
-
-  return null;
-}
-
-function AppRoutes() {
-  const location = useLocation();
-  // Don't render global space background on Journey page — it has its own 3D scene
-  const isJourney = location.pathname === '/journey';
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    const els = document.querySelectorAll('.reveal');
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
-      {/* Background layer — swap 2D/3D based on performance */}
-      {!isJourney && <BackgroundLayer />}
-
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/journey" element={<JourneyPage />} />
-          <Route path="/project/:id" element={<ProjectDetailPage />} />
-        </Routes>
-      </AnimatePresence>
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Timeline />
+      <Contact />
     </>
   );
 }
 
-function BackgroundLayer() {
-  const { isLowEnd, checked } = usePerformance();
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
-  if (!checked) return null;
-
-  if (isLowEnd) {
-    return <StarCanvas />;
-  }
-
+function App() {
   return (
-    <Suspense fallback={<StarCanvas />}>
-      <SpaceBackground3D />
-    </Suspense>
+    <>
+      <ScrollToTop />
+      <Nav />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/project/:id" element={<ProjectDetail />} />
+        </Routes>
+      </main>
+      <Footer />
+    </>
   );
 }
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <ScrollToTopOnRouteChange />
-      <Loader />
-      <CustomCursor />
-      <Navbar />
-      <AppRoutes />
-    </BrowserRouter>
-  );
-}
+export default App;

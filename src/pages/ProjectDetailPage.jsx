@@ -4,15 +4,6 @@ import { motion } from 'framer-motion';
 import { projects, typeColorMap } from '../data/portfolio.js';
 import Footer from '../components/Footer.jsx';
 import gitLogo from '../assets/gitlogo.webp';
-import navpImg from '../assets/navp.png';
-import sketchaaImg from '../assets/sketchaa.png';
-import moviebuzzImg from '../assets/moviebuzz.svg';
-
-const projectImages = {
-  navastitva: navpImg,
-  sketchaa:   sketchaaImg,
-  moviebuzz:  moviebuzzImg,
-};
 
 function FeatureItem({ text }) {
   return (
@@ -40,6 +31,7 @@ export default function ProjectDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const project = projects.find(p => p.id === id);
+  const projectImage = project?.image;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -104,8 +96,8 @@ export default function ProjectDetailPage() {
 
                 {/* Project image or emoji */}
                 <div style={{ marginBottom: '12px', width: 64, height: 64, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  {projectImages[project.id]
-                    ? <img src={projectImages[project.id]} alt={project.title} style={{ width: 60, height: 60, objectFit: 'contain', borderRadius: '12px' }} />
+                  {projectImage
+                    ? <img src={projectImage} alt={project.title} style={{ width: 60, height: 60, objectFit: 'contain', borderRadius: '12px' }} />
                     : <span style={{ fontSize: '56px' }}>{project.emoji}</span>
                   }
                 </div>
@@ -156,8 +148,8 @@ export default function ProjectDetailPage() {
                   boxShadow: `0 0 60px ${project.color}30`,
                   animation: 'planetPulse 4s ease-in-out infinite',
                 }}>
-                  {projectImages[project.id]
-                    ? <img src={projectImages[project.id]} alt={project.title} style={{ width: '65%', height: '65%', objectFit: 'contain', borderRadius: '8px' }} />
+                  {projectImage
+                    ? <img src={projectImage} alt={project.title} style={{ width: '65%', height: '65%', objectFit: 'contain', borderRadius: '8px' }} />
                     : <span style={{ fontSize: '80px' }}>{project.emoji}</span>
                   }
                 </div>
@@ -271,8 +263,8 @@ export default function ProjectDetailPage() {
                     data-hover
                   >
                     <div style={{ marginBottom: '12px', width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      {projectImages[op.id]
-                        ? <img src={projectImages[op.id]} alt={op.title} style={{ width: 36, height: 36, objectFit: 'contain', borderRadius: '8px' }} />
+                      {op.image
+                        ? <img src={op.image} alt={op.title} style={{ width: 36, height: 36, objectFit: 'contain', borderRadius: '8px' }} />
                         : <span style={{ fontSize: '32px' }}>{op.emoji}</span>
                       }
                     </div>
