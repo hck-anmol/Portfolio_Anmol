@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { PROJECTS, TAG_COLORS } from '../data/projects';
 import './ProjectDetail.css';
 
 // ── Photo Gallery (horizontal auto-scroll) ────────────
-function PhotoGallery({ photos, accent }) {
+function PhotoGallery({ photos, accent, onPhotoClick }) {
   const trackRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
   const animRef = useRef(null);
@@ -43,8 +43,10 @@ function PhotoGallery({ photos, accent }) {
         {doubled.map((photo, i) => (
           <div
             key={i}
-            className="gallery__item"
+            className="gallery__item gallery__item--clickable"
             style={{ '--g-accent': accent }}
+            onClick={() => onPhotoClick(i % photos.length)}
+            title="Click to enlarge"
           >
             {photo.src ? (
               <img src={photo.src} alt="Project screenshot" className="gallery__img" />
@@ -104,10 +106,65 @@ function TechStackGrid({ stack, accent }) {
 }
 
 // ── Main Detail Page ──────────────────────────────────
+// ── Lightbox ──────────────────────────────────────────
+function Lightbox({ photo, onClose }) {
+  useEffect(() => {
+    // Push a fake history state so browser back closes the lightbox
+    window.history.pushState({ lightbox: true }, '');
+    const onPop = () => onClose();
+    window.addEventListener('popstate', onPop);
+
+    // ESC key closes it
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', onKey);
+
+    // Lock scroll
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('popstate', onPop);
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="lightbox"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Photo lightbox"
+    >
+      {/* Close button */}
+      <button
+        className="lightbox__close"
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
+        aria-label="Close photo"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      {/* Image — stop click from bubbling to overlay */}
+      <div className="lightbox__img-wrap" onClick={(e) => e.stopPropagation()}>
+        <img src={photo.src} alt="Project screenshot" className="lightbox__img" />
+      </div>
+    </div>
+  );
+}
+
+// ── Main Detail Page ──────────────────────────────────
 export default function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const project = PROJECTS.find((p) => p.id === id);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const openLightbox = useCallback((idx) => setLightboxIndex(idx), []);
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
 
   // Scroll reveal on this page
   useEffect(() => {
@@ -212,7 +269,7 @@ export default function ProjectDetail() {
           <p className="section-label">Gallery</p>
           <p className="pd-gallery-note">Hover to pause · scroll to explore</p>
         </div>
-        <PhotoGallery photos={project.photos} accent={project.accent} />
+        <PhotoGallery photos={project.photos} accent={project.accent} onPhotoClick={openLightbox} />
       </div>
 
       {/* ── Main content ── */}
@@ -311,6 +368,11 @@ export default function ProjectDetail() {
           </div>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightboxIndex !== null && project.photos[lightboxIndex]?.src && (
+        <Lightbox photo={project.photos[lightboxIndex]} onClose={closeLightbox} />
+      )}
     </div>
   );
 }
