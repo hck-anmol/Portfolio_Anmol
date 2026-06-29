@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { hash: 'projects', label: 'Projects' },
   { hash: 'skills',   label: 'Skills' },
   { hash: 'timeline', label: 'Timeline' },
+  { hash: 'profiles', label: 'Profiles' },
 ];
 
 export default function Nav() {

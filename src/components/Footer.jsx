@@ -19,6 +19,7 @@ export default function Footer() {
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#timeline">Timeline</a>
+          <a href="#profiles">Profiles</a>
           <a href="#contact">Contact</a>
         </nav>
 

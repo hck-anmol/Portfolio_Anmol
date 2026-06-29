@@ -22,19 +22,19 @@ const PHASES = [
   {
     year: '2025',
     title: 'Competitive Programming',
-    subtitle: 'CodeChef 3★ · LeetCode 120+ · Codeforces',
+    subtitle: 'CodeForces Pupil · 200+ CF Problems · CodeChef 3★ · LeetCode 160+ · 450+ Total',
     description:
-      'Achieved CodeChef 3-star rating. Solved 120+ LeetCode problems spanning dynamic programming, graphs, binary search, and greedy optimization. Active on Codeforces.',
+      'Achieved Pupil rank on Codeforces (profile: anmolkjha) with 200+ problems solved. CodeChef 3-star rating. Solved 160+ LeetCode problems spanning dynamic programming, graphs, binary search, and greedy optimization — totalling 450+ problems across all platforms.',
     tags: ['DP', 'Graphs', 'Binary Search', 'Greedy', 'Trees', 'Number Theory'],
     color: '#FBBF24',
   },
   {
     year: '2025–Present',
-    title: 'AI / Computer Vision',
-    subtitle: 'YOLOv8 · OpenCV · TensorFlow · Python',
+    title: 'AI / ML & Computer Vision',
+    subtitle: 'RAG · Prompt Engineering · ML Concepts · YOLOv8 · OpenCV · TensorFlow',
     description:
-      'Expanding into machine learning and computer vision. Integrated YOLOv8 vehicle detection into TRAFF-IQ, exploring TensorFlow for neural networks, and building toward ML-augmented web systems.',
-    tags: ['YOLOv8', 'OpenCV', 'TensorFlow', 'Python', 'NumPy', 'Computer Vision'],
+      'Learned RAG (Retrieval-Augmented Generation), Prompt Engineering, and core ML concepts. Integrated YOLOv8 vehicle detection into TRAFF-IQ, exploring TensorFlow for neural networks, and building toward ML-augmented web systems.',
+    tags: ['RAG', 'Prompt Engineering', 'ML Concepts', 'YOLOv8', 'OpenCV', 'TensorFlow', 'Python'],
     color: '#34D399',
   },
 ];

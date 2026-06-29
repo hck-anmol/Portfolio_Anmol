@@ -53,7 +53,7 @@ export default function Hero() {
 
           {/* Description */}
           <p className="hero__desc">
-            Second-year CSE student at IIIT Vadodara. I design and build full-stack applications,
+            Third-year CSE student at IIIT Vadodara. I design and build full-stack applications,
             real-time multiplayer systems, and computer vision pipelines — from schema to deployment.
           </p>
 
@@ -92,18 +92,18 @@ export default function Hero() {
             </div>
             <div className="hero__stat-divider" />
             <div className="hero__stat">
-              <span className="hero__stat-value">8.16</span>
-              <span className="hero__stat-label">CGPA</span>
+              <span className="hero__stat-value">8.18</span>
+              <span className="hero__stat-label">CPI</span>
+            </div>
+            <div className="hero__stat-divider" />
+            <div className="hero__stat">
+              <span className="hero__stat-value">450+</span>
+              <span className="hero__stat-label">Problems Solved</span>
             </div>
             <div className="hero__stat-divider" />
             <div className="hero__stat">
               <span className="hero__stat-value">3★</span>
               <span className="hero__stat-label">CodeChef</span>
-            </div>
-            <div className="hero__stat-divider" />
-            <div className="hero__stat">
-              <span className="hero__stat-value">120+</span>
-              <span className="hero__stat-label">LeetCode</span>
             </div>
           </div>
         </div>
@@ -128,8 +128,8 @@ export default function Hero() {
   education: {
     institute: "IIIT Vadodara",
     degree: "B.Tech CSE",
-    batch: "2028",
-    cgpa: 8.16,
+    year: "3rd Year",
+    cpi: 8.18,
   },
   currentlyBuilding:
     "systems that scale",

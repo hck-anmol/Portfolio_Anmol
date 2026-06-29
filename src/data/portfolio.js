@@ -234,10 +234,12 @@ export const skills = [
   },
   {
     icon: '',
-    category: 'Currently Learning',
+    category: 'AI / ML',
     color: 'cyan',
     tags: [
-      { name: 'TypeScript', color: 'pink' },
+      { name: 'RAG', color: 'cyan' },
+      { name: 'Prompt Engineering', color: 'cyan' },
+      { name: 'ML Concepts', color: 'blue' },
       { name: 'TensorFlow', color: 'pink' },
       { name: 'OpenCV', color: 'cyan' },
       { name: 'Docker', color: 'cyan' },
@@ -270,10 +272,10 @@ export const journeyPhases = [
     glowColor: 'rgba(245,158,11,0.4)',
     year: '2025 – 2026',
     title: 'Competitive Programming',
-    subtitle: 'CodeChef 3⭐ · LeetCode 120+ Problems',
+    subtitle: 'CodeForces Pupil · 200+ CF Problems · CodeChef 3⭐ · LeetCode 160+ · 450+ Total',
     description:
-      'Dived deep into competitive programming to sharpen problem-solving skills. Achieved CodeChef 3-star rating and solved 120+ problems on LeetCode spanning dynamic programming, graphs, trees, and system optimization challenges.',
-    highlights: ['CodeChef 3⭐', 'LeetCode 120+ solved', 'Codeforces rated', 'Contest participant'],
+      'Dived deep into competitive programming to sharpen problem-solving skills. Achieved Pupil rank on CodeForces (profile: anmolkjha) with 200+ problems solved, CodeChef 3-star rating, and solved 160+ problems on LeetCode — totalling 450+ problems across platforms spanning dynamic programming, graphs, trees, and system optimization challenges.',
+    highlights: ['CodeForces Pupil — anmolkjha', 'CodeChef 3⭐', 'LeetCode 160+ solved', '450+ Total Problems'],
     tags: ['Dynamic Programming', 'Graphs', 'Binary Search', 'Trees', 'Greedy', 'Number Theory'],
   },
   {
@@ -309,11 +311,11 @@ export const journeyPhases = [
     glowColor: 'rgba(6,182,212,0.4)',
     year: '2025 – Present',
     title: 'AI / ML Journey',
-    subtitle: 'TensorFlow · OpenCV · YOLO · Computer Vision',
+    subtitle: 'RAG · Prompt Engineering · ML Concepts · TensorFlow · OpenCV · YOLO',
     description:
-      'Expanding into Artificial Intelligence and Machine Learning. Exploring computer vision with OpenCV and YOLO-based object detection models, building neural networks with TensorFlow, and integrating AI capabilities into web applications. The next frontier of my development journey.',
-    highlights: ['TensorFlow basics', 'OpenCV projects', 'YOLO object detection', 'Python ML ecosystem'],
-    tags: ['TensorFlow', 'OpenCV', 'YOLO', 'Python', 'NumPy', 'Computer Vision', 'Deep Learning'],
+      'Expanding into Artificial Intelligence and Machine Learning. Learned RAG (Retrieval-Augmented Generation), Prompt Engineering, and core ML concepts. Exploring computer vision with OpenCV and YOLO-based object detection models, building neural networks with TensorFlow, and integrating AI capabilities into web applications.',
+    highlights: ['RAG & Prompt Engineering', 'Core ML Concepts', 'TensorFlow basics', 'OpenCV & YOLO'],
+    tags: ['RAG', 'Prompt Engineering', 'TensorFlow', 'OpenCV', 'YOLO', 'Python', 'NumPy', 'Computer Vision', 'Deep Learning'],
   },
 ];
 

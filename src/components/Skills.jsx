@@ -17,9 +17,9 @@ const SKILL_GROUPS = [
     skills: ['MySQL', 'MongoDB', 'Aiven Cloud', 'Firebase', 'SQL Design', 'Indexing'],
   },
   {
-    domain: 'AI / Computer Vision',
+    domain: 'AI / ML & Computer Vision',
     color: 'green',
-    skills: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow', 'NumPy', 'Pandas'],
+    skills: ['RAG', 'Prompt Engineering', 'ML Concepts', 'Python', 'YOLOv8', 'OpenCV', 'TensorFlow', 'NumPy'],
   },
   {
     domain: 'Mobile',

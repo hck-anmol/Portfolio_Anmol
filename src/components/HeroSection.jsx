@@ -134,7 +134,7 @@ export default function HeroSection() {
             lineHeight: 1.75,
           }}
         >
-          I build fast, beautiful, full-stack web experiences — from real-time multiplayer games to intelligent traffic systems.
+          I build fast, beautiful, full-stack web experiences — from real-time multiplayer games to intelligent traffic systems. Also into RAG, Prompt Engineering &amp; ML.
         </motion.p>
 
         {/* CTA buttons */}
@@ -184,7 +184,7 @@ export default function HeroSection() {
           variants={item}
           style={{ display: 'flex', gap: '40px', justifyContent: 'center', marginTop: '56px', flexWrap: 'wrap' }}
         >
-          {[['5+', 'Projects Built'], ['MERN', 'Stack Expert'], ['100%', 'Passionate']].map(([num, lbl]) => (
+          {[['450+', 'Problems Solved'], ['5+', 'Projects Built'], ['Pupil', 'CodeForces Rank']].map(([num, lbl]) => (
             <div key={lbl} style={{ textAlign: 'center' }}>
               <div style={{
                 fontSize: '22px', fontWeight: 800,

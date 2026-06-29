@@ -2,9 +2,9 @@ import './About.css';
 
 const STATS = [
   { value: '5+', label: 'Production projects shipped' },
-  { value: '8.16', label: 'CGPA at IIIT Vadodara' },
+  { value: '8.18', label: 'CPI at IIIT Vadodara' },
   { value: '3★', label: 'CodeChef rating' },
-  { value: '120+', label: 'LeetCode problems solved' },
+  { value: '450+', label: 'Problems solved' },
 ];
 
 export default function About() {
@@ -19,7 +19,7 @@ export default function About() {
           </h2>
           <div className="about__body">
             <p>
-              I'm Anmol Kumar, a Computer Science student at IIIT Vadodara (Batch 2028).
+              I'm Anmol Kumar, a third-year Computer Science student at IIIT Vadodara (Batch 2028).
               I focus on the gap between concept and deployed software — writing backend logic
               that holds under load, frontend interfaces that feel deliberate, and systems
               where the architecture decision matters as much as the feature itself.
@@ -31,8 +31,9 @@ export default function About() {
               solve actual problems for actual users.
             </p>
             <p>
-              Currently exploring machine learning integration with web systems, and sharpening
-              competitive programming skills on Codeforces and LeetCode.
+              Also exploring RAG, Prompt Engineering, and core ML concepts. Outside of
+              building, I stay sharp through competitive programming — 450+ problems solved
+              across Codeforces, CodeChef, and LeetCode.
             </p>
           </div>
           <div className="about__links">
@@ -76,7 +77,7 @@ export default function About() {
             </p>
             <ul className="about__currently-list">
               <li>B.Tech CSE @ IIIT Vadodara (2024–2028)</li>
-              <li>Exploring ML + web integration</li>
+              <li>RAG · Prompt Engineering · ML Concepts</li>
               <li>Open to internship / freelance projects</li>
             </ul>
           </div>
