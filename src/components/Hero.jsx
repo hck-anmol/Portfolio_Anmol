@@ -83,29 +83,6 @@ export default function Hero() {
               GitHub
             </a>
           </div>
-
-          {/* Stats row */}
-          <div className="hero__stats">
-            <div className="hero__stat">
-              <span className="hero__stat-value">5+</span>
-              <span className="hero__stat-label">Shipped Projects</span>
-            </div>
-            <div className="hero__stat-divider" />
-            <div className="hero__stat">
-              <span className="hero__stat-value">8.18</span>
-              <span className="hero__stat-label">CPI</span>
-            </div>
-            <div className="hero__stat-divider" />
-            <div className="hero__stat">
-              <span className="hero__stat-value">450+</span>
-              <span className="hero__stat-label">Problems Solved</span>
-            </div>
-            <div className="hero__stat-divider" />
-            <div className="hero__stat">
-              <span className="hero__stat-value">3★</span>
-              <span className="hero__stat-label">CodeChef</span>
-            </div>
-          </div>
         </div>
 
         {/* Right — code card */}

@@ -3,7 +3,7 @@ import './About.css';
 const STATS = [
   { value: '5+', label: 'Production projects shipped' },
   { value: '8.18', label: 'CPI at IIIT Vadodara' },
-  { value: '3★', label: 'CodeChef rating' },
+  { value: 'Pupil', label: 'CodeForces Rank' },
   { value: '450+', label: 'Problems solved' },
 ];
 
