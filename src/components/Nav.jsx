@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Nav.css';
+import ResumeModal from './ResumeModal';
 
 const NAV_LINKS = [
   { hash: 'about',    label: 'About' },
@@ -13,6 +14,7 @@ const NAV_LINKS = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -77,6 +79,15 @@ export default function Nav() {
 
         {/* CTA */}
         <div className="nav__right">
+          <button
+            className="nav__resume"
+            onClick={() => setResumeOpen(true)}
+          >
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            Resume
+          </button>
           <a
             href="/#contact"
             className="nav__cta"
@@ -107,6 +118,13 @@ export default function Nav() {
               {label}
             </a>
           ))}
+          <button
+            className="nav__mobile-link"
+            style={{ textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer', padding: '14px 0', fontSize: '15px', fontWeight: 500, color: 'var(--text-secondary)', borderBottom: '1px solid var(--border)', width: '100%' }}
+            onClick={() => { setMenuOpen(false); setResumeOpen(true); }}
+          >
+            ↓ Resume
+          </button>
           <a
             href="/#contact"
             className="nav__mobile-link nav__mobile-cta"
@@ -116,6 +134,9 @@ export default function Nav() {
           </a>
         </div>
       )}
+
+      {/* Resume Modal */}
+      {resumeOpen && <ResumeModal onClose={() => setResumeOpen(false)} />}
     </header>
   );
 }
