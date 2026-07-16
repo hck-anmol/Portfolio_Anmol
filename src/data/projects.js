@@ -121,34 +121,34 @@ The system was designed around two core problems: signal timing in modern cities
     tagline: 'Real-time game engine in the browser',
     shortBullets: [
       'Engineered a turn-based multiplayer drawing game with sub-100ms canvas synchronization across all connected clients via Socket.io',
-      'Stateful server-side game loop manages turns, 60s countdowns, anonymous voting rounds, and live leaderboard computation — no database required',
+      'Integrated OLLAMA (Qwen2.5-VL) as an AI judge to automatically evaluate and score sketches based on how well they match the prompt',
       'Room lifecycle engine handles creation, lock-on-start, 10-minute inactivity expiry, and reconnection with state rehydration',
     ],
-    tech: ['React', 'Socket.io', 'Express', 'Node.js', 'Canvas API', 'Tailwind CSS'],
+    tech: ['React', 'Socket.io', 'Express', 'Node.js', 'Canvas API', 'Tailwind CSS', 'OLLAMA', 'Qwen2.5-VL'],
     github: 'https://github.com/hck-anmol/Sketchaa',
     live: 'https://sketchaa.vercel.app/',
     accent: '#5B8DEF',
 
-    overview: `Sketchaa is a real-time multiplayer drawing and judging game built entirely in the browser. Players are given a word, draw it on a shared canvas within 60 seconds, then rate each other's sketches anonymously. The player with the highest average score wins.
+    overview: `Sketchaa is a real-time multiplayer drawing and judging game built entirely in the browser. Players are given a word, draw it on a shared canvas within 60 seconds, then Qwen2.5-VL (via OLLAMA) automatically evaluates the sketches. The player with the highest AI-rated score wins.
 
-The engineering challenge was building a fully consistent multiplayer game loop without a database — all state lives on the server and is rehydrated on reconnect.`,
+The engineering challenge was building a fully consistent multiplayer game loop without a database — all state lives on the server and is rehydrated on reconnect, combined with seamless local AI integration using OLLAMA for objective sketch evaluation.`,
 
-    problem: 'Most browser-based drawing games either use peer-to-peer (fragile) or require a database for game state (slow). Building a smooth, consistent multiplayer experience with sub-100ms latency requires careful server-authoritative state management.',
+    problem: 'Most browser-based drawing games rely on subjective peer voting or fragile peer-to-peer logic. Building a smooth multiplayer experience with sub-100ms latency and a fair, objective AI judge — without using a paid cloud API — requires careful state management and local model integration.',
 
-    solution: 'A server-authoritative game loop using Socket.io rooms — all state (turns, scores, canvas strokes) lives on the Node.js server. Clients are thin renderers that emit events and receive authoritative updates.',
+    solution: 'A server-authoritative game loop using Socket.io rooms. At round end, the canvas is evaluated by Qwen2.5-VL running locally via OLLAMA — a vision-language model that scores sketches based on how accurately they depict the given word.',
 
     architecture: [
-      { layer: 'Game Loop (Server)', detail: 'Node.js maintains all game state in-memory per room: current drawer, word list, timer, scores, voting state. No database involved.' },
-      { layer: 'Canvas Sync', detail: 'Drawing strokes are emitted as delta events (path coordinates, color, width) and broadcast to all room members with <100ms latency via Socket.io' },
-      { layer: 'Room Management', detail: 'Rooms auto-lock on game start, auto-expire after 10 min inactivity, and support graceful disconnection/reconnection with state rehydration' },
-      { layer: 'Anonymous Voting', detail: 'During the judging phase, player names are hidden. Votes are tallied server-side to prevent manipulation.' },
-      { layer: 'Leaderboard', detail: 'Live score updates pushed to all clients after each round. Final standings computed from average judge scores.' },
+      { layer: 'Game Loop (Server)', detail: 'Node.js maintains all game state in-memory per room: current drawer, word list, timer, scores. No database involved.' },
+      { layer: 'Canvas Sync', detail: 'Drawing strokes emitted as delta events and broadcast to all room members with <100ms latency via Socket.io' },
+      { layer: 'AI Judge (OLLAMA)', detail: 'Canvas exported as image at round end and sent to Qwen2.5-VL via OLLAMA for vision-based scoring against the prompt word.' },
+      { layer: 'Room Management', detail: 'Rooms auto-lock on game start, auto-expire after 10 min inactivity, and support graceful reconnection with state rehydration' },
+      { layer: 'Leaderboard', detail: 'Live score updates pushed to all clients after each round, computed from Qwen2.5-VL evaluations.' },
     ],
 
     features: [
       'Sub-100ms canvas stroke synchronization via Socket.io',
+      'AI sketch judging via Qwen2.5-VL (OLLAMA) — no paid API needed',
       'Server-authoritative game loop (no database needed)',
-      'Anonymous peer voting system — names hidden during judging',
       'Live leaderboard updated in real-time after each round',
       'Room creation, lock-on-start, and 10-minute auto-expiry',
       'In-game chat with full emoji support',
@@ -159,6 +159,7 @@ The engineering challenge was building a fully consistent multiplayer game loop 
     techStack: {
       'Frontend': ['React', 'Tailwind CSS', 'Canvas API', 'HTML5'],
       'Backend': ['Node.js', 'Express.js', 'Socket.io'],
+      'AI / Vision': ['OLLAMA', 'Qwen2.5-VL', 'Vision-Language Model'],
       'Real-Time': ['WebSockets', 'Socket.io Rooms', 'Event Broadcasting'],
       'Deployment': ['Vercel (client)', 'Render (server)'],
     },
@@ -366,6 +367,61 @@ The project was delivered end-to-end: design, development, and deployment, with 
       { src: navaGallery },
       { src: navaJoinus },
       { src: navaJourney },
+    ],
+  },
+
+  {
+    id: 'assetflow',
+    tag: 'AI-Powered · Full-Stack · Asset Management',
+    tagColor: 'violet',
+    title: 'AssetFlow',
+    tagline: 'AI-powered IT asset management for modern organizations',
+    shortBullets: [
+      'Built a full-stack IT asset management platform with Kanban-driven maintenance workflows, real-time utilization analytics, and secure allocation tracking',
+      'Integrated OLLAMA (Qwen3) as a local AI assistant to provide context-aware recommendations for asset optimization — no cloud API required',
+      'Designed with Prisma ORM + JWT auth, TypeScript across the stack, and a fully responsive dark/light mode UI',
+    ],
+    tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'JWT', 'OLLAMA', 'Qwen3', 'Vite'],
+    github: 'https://github.com/hck-anmol/AssetFlow',
+    live: null,
+    accent: '#A78BFA',
+
+    overview: `AssetFlow is an AI-powered IT Asset Management platform designed to help organizations track, allocate, and maintain their assets intelligently. It combines real-time utilization analytics, a Kanban-driven maintenance workflow, and an embedded AI assistant powered by Qwen3 via OLLAMA — all without requiring a paid cloud API.
+
+Built with TypeScript across the full stack, Prisma ORM for schema management, and JWT-based authentication, AssetFlow is engineered for production-grade reliability with a clean, responsive UI that supports dark and light modes.`,
+
+    problem: 'Organizations managing IT assets typically rely on spreadsheets or expensive SaaS tools. There\'s no lightweight, self-hosted solution that combines asset lifecycle tracking, maintenance scheduling, and AI-driven optimization recommendations.',
+
+    solution: 'A self-hosted full-stack platform with a local AI assistant (Qwen3 via OLLAMA), Kanban maintenance workflows, and real-time analytics — giving organizations complete asset visibility and intelligent recommendations without cloud dependencies.',
+
+    architecture: [
+      { layer: 'Asset Registry', detail: 'Complete asset lifecycle tracking: acquisition, allocation, maintenance history, and decommission state stored via Prisma ORM' },
+      { layer: 'Kanban Maintenance', detail: 'Drag-and-drop Kanban board for scheduling and tracking maintenance tasks, with status transitions and priority management' },
+      { layer: 'AI Assistant (OLLAMA)', detail: 'Qwen3 model runs locally via OLLAMA, providing context-aware optimization recommendations based on utilization data and maintenance history' },
+      { layer: 'Real-Time Analytics', detail: 'Utilization dashboards with allocation breakdowns, maintenance frequency, and asset health indicators — updated in real-time' },
+      { layer: 'Auth & Security', detail: 'JWT-based authentication with bcryptjs password hashing. All routes protected server-side with role-scoped access' },
+    ],
+
+    features: [
+      'Full asset lifecycle management — acquisition to decommission',
+      'Secure allocation tracking — who has what, and since when',
+      'Kanban-driven maintenance workflow with priority management',
+      'Real-time utilization analytics and asset health dashboards',
+      'AI assistant powered by Qwen3 (OLLAMA) — fully local, no API cost',
+      'Context-aware optimization recommendations from AI',
+      'JWT + bcrypt authentication with protected routes',
+      'Dark/light mode with CSS variables and full responsiveness',
+    ],
+
+    techStack: {
+      'Frontend': ['React 18', 'TypeScript', 'Vite', 'Vanilla CSS', 'React Router DOM'],
+      'Backend': ['Node.js', 'Express', 'TypeScript', 'JWT', 'bcryptjs'],
+      'Database': ['Prisma ORM', 'Schema migrations'],
+      'AI / Local LLM': ['OLLAMA', 'Qwen3', 'Context-aware recommendations'],
+    },
+
+    photos: [
+      // Add screenshot images to src/data/photos/assetflow/ and import them above
     ],
   },
 ];

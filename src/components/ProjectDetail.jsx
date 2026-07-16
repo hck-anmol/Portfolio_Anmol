@@ -3,24 +3,39 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { PROJECTS, TAG_COLORS } from '../data/projects';
 import './ProjectDetail.css';
 
-// ── Photo Gallery (horizontal auto-scroll) ────────────
+// ── Photo Gallery (horizontal auto-scroll + manual drag) ────────────
 function PhotoGallery({ photos, accent, onPhotoClick }) {
   const trackRef = useRef(null);
+  const wrapRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const animRef = useRef(null);
   const posRef = useRef(0);
+  const dragStartX = useRef(0);
+  const dragStartPos = useRef(0);
+  const dragMoved = useRef(false);
 
+  // Preload all images immediately on mount for fast display
+  useEffect(() => {
+    photos.forEach((photo) => {
+      if (photo.src) {
+        const img = new Image();
+        img.src = photo.src;
+      }
+    });
+  }, [photos]);
+
+  // Auto-scroll animation loop
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    const speed = 0.5; // px per frame
+    const speed = 0.5;
 
     const animate = () => {
-      if (!isPaused) {
+      if (!isPaused && !isDragging) {
         posRef.current += speed;
-        // Reset when halfway through (seamless loop — we duplicate items)
         const half = track.scrollWidth / 2;
-        if (posRef.current >= half) posRef.current = 0;
+        if (half > 0 && posRef.current >= half) posRef.current -= half;
         track.style.transform = `translateX(-${posRef.current}px)`;
       }
       animRef.current = requestAnimationFrame(animate);
@@ -28,16 +43,57 @@ function PhotoGallery({ photos, accent, onPhotoClick }) {
 
     animRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animRef.current);
-  }, [isPaused]);
+  }, [isPaused, isDragging]);
+
+  // Pointer events handle both mouse AND touch — no need for separate touch handlers
+  const handlePointerDown = (e) => {
+    e.currentTarget.setPointerCapture(e.pointerId);
+    setIsDragging(true);
+    dragStartX.current = e.clientX;
+    dragStartPos.current = posRef.current;
+    dragMoved.current = false;
+  };
+
+  const handlePointerMove = (e) => {
+    if (!isDragging) return;
+    const track = trackRef.current;
+    if (!track) return;
+
+    const half = track.scrollWidth / 2;
+    if (half <= 0) return;
+
+    const walk = (dragStartX.current - e.clientX) * 1.5;
+    if (Math.abs(walk) > 3) dragMoved.current = true;
+
+    let newPos = dragStartPos.current + walk;
+    if (newPos >= half) newPos %= half;
+    if (newPos < 0) newPos = half - (Math.abs(newPos) % half);
+
+    posRef.current = newPos || 0;
+    track.style.transform = `translateX(-${posRef.current}px)`;
+  };
+
+  const handlePointerUp = () => {
+    setIsDragging(false);
+  };
 
   // Duplicate for infinite loop
   const doubled = [...photos, ...photos];
 
   return (
     <div
+      ref={wrapRef}
       className="gallery"
       onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      onMouseLeave={() => {
+        setIsPaused(false);
+        setIsDragging(false);
+      }}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
+      style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
     >
       <div className="gallery__track" ref={trackRef}>
         {doubled.map((photo, i) => (
@@ -45,11 +101,23 @@ function PhotoGallery({ photos, accent, onPhotoClick }) {
             key={i}
             className="gallery__item gallery__item--clickable"
             style={{ '--g-accent': accent }}
-            onClick={() => onPhotoClick(i % photos.length)}
+            onClick={() => {
+              // Only open lightbox if not dragging
+              if (!dragMoved.current) {
+                onPhotoClick(i % photos.length);
+              }
+            }}
             title="Click to enlarge"
           >
             {photo.src ? (
-              <img src={photo.src} alt="Project screenshot" className="gallery__img" />
+              <img
+                src={photo.src}
+                alt="Project screenshot"
+                className="gallery__img"
+                draggable="false"
+                loading="eager"
+                decoding="async"
+              />
             ) : (
               <div className="gallery__placeholder">
                 <div className="gallery__placeholder-inner">
@@ -66,12 +134,13 @@ function PhotoGallery({ photos, accent, onPhotoClick }) {
         ))}
       </div>
       {/* Pause indicator */}
-      {isPaused && (
+      {isPaused && !isDragging && (
         <div className="gallery__paused-badge">⏸ Paused</div>
       )}
     </div>
   );
 }
+
 
 // ── Architecture Table ────────────────────────────────
 function ArchTable({ layers }) {
