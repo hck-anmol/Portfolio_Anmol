@@ -57,6 +57,32 @@ export const projects = [
     color: '#06b6d4',
   },
   {
+    id: 'assetflow',
+    emoji: '⚡',
+    title: 'AssetFlow',
+    subtitle: 'AI-Powered IT Asset Management',
+    type: ['AI / LLM', 'Full-Stack'],
+    typeColors: ['purple', 'pink'],
+    shortDesc: 'Full-stack asset management platform with OLLAMA (Qwen3) AI assistant, Kanban maintenance workflows, and real-time analytics.',
+    description:
+      'AssetFlow is an AI-powered IT Asset Management platform that helps organizations track, allocate, and maintain their assets intelligently. It features Kanban-driven maintenance workflows, real-time utilization analytics, and an embedded AI assistant powered by Qwen3 via OLLAMA — fully local, no paid cloud API required. Built with TypeScript across the full stack, Prisma ORM, and JWT authentication.',
+    features: [
+      'Full asset lifecycle management',
+      'Secure allocation tracking per user',
+      'Kanban maintenance workflow board',
+      'Real-time utilization analytics dashboard',
+      'AI assistant (Qwen3 via OLLAMA) for optimization tips',
+      'JWT + bcrypt authentication',
+      'Dark/light mode theming',
+      'TypeScript across frontend and backend',
+    ],
+    tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'JWT', 'OLLAMA', 'Qwen3', 'Vite'],
+    github: 'https://github.com/hck-anmol/AssetFlow',
+    live: null,
+    featured: true,
+    color: '#a78bfa',
+  },
+  {
     id: 'certifications',
     emoji: '📃',
     title: 'Certifications',
@@ -168,32 +194,6 @@ export const projects = [
     featured: false,
     color: '#a855f7',
   },
-  {
-    id: 'assetflow',
-    emoji: '⚡',
-    title: 'AssetFlow',
-    subtitle: 'AI-Powered IT Asset Management',
-    type: ['AI / LLM', 'Full-Stack'],
-    typeColors: ['purple', 'pink'],
-    shortDesc: 'Full-stack asset management platform with OLLAMA (Qwen3) AI assistant, Kanban maintenance workflows, and real-time analytics.',
-    description:
-      'AssetFlow is an AI-powered IT Asset Management platform that helps organizations track, allocate, and maintain their assets intelligently. It features Kanban-driven maintenance workflows, real-time utilization analytics, and an embedded AI assistant powered by Qwen3 via OLLAMA — fully local, no paid cloud API required. Built with TypeScript across the full stack, Prisma ORM, and JWT authentication.',
-    features: [
-      'Full asset lifecycle management',
-      'Secure allocation tracking per user',
-      'Kanban maintenance workflow board',
-      'Real-time utilization analytics dashboard',
-      'AI assistant (Qwen3 via OLLAMA) for optimization tips',
-      'JWT + bcrypt authentication',
-      'Dark/light mode theming',
-      'TypeScript across frontend and backend',
-    ],
-    tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'JWT', 'OLLAMA', 'Qwen3', 'Vite'],
-    github: 'https://github.com/hck-anmol/AssetFlow',
-    live: null,
-    featured: true,
-    color: '#a78bfa',
-  }
 ];
 
 // ================================================================

@@ -4,54 +4,63 @@
 // ================================================================
 
 // ── Traffiq photos ──────────────────────────────────────────────
-import traffiqOptimalRoute    from './photos/traffiq/optimalroute.png';
-import traffiqPrioritizing    from './photos/traffiq/prioritizing.png';
-import traffiqRedLight        from './photos/traffiq/redlightviolation.png';
-import traffiqDensity         from './photos/traffiq/trafficdensity.png';
+import traffiqOptimalRoute from './photos/traffiq/optimalroute.png';
+import traffiqPrioritizing from './photos/traffiq/prioritizing.png';
+import traffiqRedLight from './photos/traffiq/redlightviolation.png';
+import traffiqDensity from './photos/traffiq/trafficdensity.png';
+
+// ── AssetFlow photos ───────────────────────────────────────────
+import assetflowHome from './photos/assetflow/home.png';
+import assetflowLogin from './photos/assetflow/login.png';
+import assetflowAsset from './photos/assetflow/asset.png';
+import assetflowReport from './photos/assetflow/report.png';
+import assetflowResource from './photos/assetflow/resource.png';
+import assetflowAiAssistant from './photos/assetflow/aiassistant.png';
+import assetflowSetting from './photos/assetflow/setting.png';
 
 // ── Sketchaa photos ─────────────────────────────────────────────
-import sketchaaCanvas         from './photos/sketchaa/canvas.png';
-import sketchaaChat           from './photos/sketchaa/chat.png';
-import sketchaaCreateRoom     from './photos/sketchaa/createRoom.png';
-import sketchaaDraw           from './photos/sketchaa/draw.png';
-import sketchaaHome           from './photos/sketchaa/home.png';
-import sketchaaInfo           from './photos/sketchaa/info.png';
-import sketchaaJudgement      from './photos/sketchaa/judgement.png';
-import sketchaaLeaderboard    from './photos/sketchaa/leaderboard.png';
+import sketchaaCanvas from './photos/sketchaa/canvas.png';
+import sketchaaChat from './photos/sketchaa/chat.png';
+import sketchaaCreateRoom from './photos/sketchaa/createRoom.png';
+import sketchaaDraw from './photos/sketchaa/draw.png';
+import sketchaaHome from './photos/sketchaa/home.png';
+import sketchaaInfo from './photos/sketchaa/info.png';
+import sketchaaJudgement from './photos/sketchaa/judgement.png';
+import sketchaaLeaderboard from './photos/sketchaa/leaderboard.png';
 
 // ── MovieBuzz photos ────────────────────────────────────────────
-import movieAddMovies         from './photos/moviebuzz/addmovies.png';
-import movieAddTheater        from './photos/moviebuzz/addtheater.png';
-import movieConfirmation      from './photos/moviebuzz/confirmation.png';
-import movieFriendsInvite     from './photos/moviebuzz/friendsinvite.png';
-import movieHomepage          from './photos/moviebuzz/homapege.png';
-import movieManageMovies      from './photos/moviebuzz/managemovies.png';
-import movieManageTheaters    from './photos/moviebuzz/managetheaters.png';
-import movieMovieDetail       from './photos/moviebuzz/moviedetail.png';
-import movieMovies            from './photos/moviebuzz/movies.png';
-import moviePaymentDetail     from './photos/moviebuzz/paymentdetail.png';
-import movieRecentBooking     from './photos/moviebuzz/recentbooking.png';
-import movieSeating           from './photos/moviebuzz/seating.png';
-import movieTheaterDetail     from './photos/moviebuzz/theaterdetail.png';
-import movieTheaters          from './photos/moviebuzz/theaters.png';
+import movieAddMovies from './photos/moviebuzz/addmovies.png';
+import movieAddTheater from './photos/moviebuzz/addtheater.png';
+import movieConfirmation from './photos/moviebuzz/confirmation.png';
+import movieFriendsInvite from './photos/moviebuzz/friendsinvite.png';
+import movieHomepage from './photos/moviebuzz/homapege.png';
+import movieManageMovies from './photos/moviebuzz/managemovies.png';
+import movieManageTheaters from './photos/moviebuzz/managetheaters.png';
+import movieMovieDetail from './photos/moviebuzz/moviedetail.png';
+import movieMovies from './photos/moviebuzz/movies.png';
+import moviePaymentDetail from './photos/moviebuzz/paymentdetail.png';
+import movieRecentBooking from './photos/moviebuzz/recentbooking.png';
+import movieSeating from './photos/moviebuzz/seating.png';
+import movieTheaterDetail from './photos/moviebuzz/theaterdetail.png';
+import movieTheaters from './photos/moviebuzz/theaters.png';
 
 // ── Gymkhana photos ─────────────────────────────────────────────
-import gymAdminPanel          from './photos/gymkhana/adminpannel.jpeg';
-import gymAuthentication      from './photos/gymkhana/authentication.jpeg';
-import gymClub                from './photos/gymkhana/club.jpeg';
-import gymDashboard           from './photos/gymkhana/dashboard.jpeg';
-import gymEvents              from './photos/gymkhana/events.jpeg';
-import gymLogin               from './photos/gymkhana/login.jpeg';
-import gymProfile             from './photos/gymkhana/profile.jpeg';
-import gymResults             from './photos/gymkhana/results.jpeg';
+import gymAdminPanel from './photos/gymkhana/adminpannel.jpeg';
+import gymAuthentication from './photos/gymkhana/authentication.jpeg';
+import gymClub from './photos/gymkhana/club.jpeg';
+import gymDashboard from './photos/gymkhana/dashboard.jpeg';
+import gymEvents from './photos/gymkhana/events.jpeg';
+import gymLogin from './photos/gymkhana/login.jpeg';
+import gymProfile from './photos/gymkhana/profile.jpeg';
+import gymResults from './photos/gymkhana/results.jpeg';
 
 // ── NavAstitva photos ───────────────────────────────────────────
-import navaAchievements       from './photos/navastitva/achievements.png';
-import navaDonate             from './photos/navastitva/donate.png';
-import navaGallery            from './photos/navastitva/gallery.png';
-import navaHome               from './photos/navastitva/home.png';
-import navaJoinus             from './photos/navastitva/joinus.png';
-import navaJourney            from './photos/navastitva/journey.png';
+import navaAchievements from './photos/navastitva/achievements.png';
+import navaDonate from './photos/navastitva/donate.png';
+import navaGallery from './photos/navastitva/gallery.png';
+import navaHome from './photos/navastitva/home.png';
+import navaJoinus from './photos/navastitva/joinus.png';
+import navaJourney from './photos/navastitva/journey.png';
 
 export const PROJECTS = [
   {
@@ -173,6 +182,67 @@ The engineering challenge was building a fully consistent multiplayer game loop 
       { src: sketchaaLeaderboard },
       { src: sketchaaChat },
       { src: sketchaaInfo },
+    ],
+  },
+
+  {
+    id: 'assetflow',
+    tag: 'AI-Powered · Full-Stack · Asset Management',
+    tagColor: 'violet',
+    title: 'AssetFlow',
+    tagline: 'AI-powered IT asset management for modern organizations',
+    shortBullets: [
+      'Built a full-stack IT asset management platform with Kanban-driven maintenance workflows, real-time utilization analytics, and secure allocation tracking',
+      'Integrated OLLAMA (Qwen3) as a local AI assistant to provide context-aware recommendations for asset optimization — no cloud API required',
+      'Designed with Prisma ORM + JWT auth, TypeScript across the stack, and a fully responsive dark/light mode UI',
+    ],
+    tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'JWT', 'OLLAMA', 'Qwen3', 'Vite'],
+    github: 'https://github.com/hck-anmol/AssetFlow',
+    live: null,
+    accent: '#A78BFA',
+
+    overview: `AssetFlow is an AI-powered IT Asset Management platform designed to help organizations track, allocate, and maintain their assets intelligently. It combines real-time utilization analytics, a Kanban-driven maintenance workflow, and an embedded AI assistant powered by Qwen3 via OLLAMA — all without requiring a paid cloud API.
+
+Built with TypeScript across the full stack, Prisma ORM for schema management, and JWT-based authentication, AssetFlow is engineered for production-grade reliability with a clean, responsive UI that supports dark and light modes.`,
+
+    problem: 'Organizations managing IT assets typically rely on spreadsheets or expensive SaaS tools. There\'s no lightweight, self-hosted solution that combines asset lifecycle tracking, maintenance scheduling, and AI-driven optimization recommendations.',
+
+    solution: 'A self-hosted full-stack platform with a local AI assistant (Qwen3 via OLLAMA), Kanban maintenance workflows, and real-time analytics — giving organizations complete asset visibility and intelligent recommendations without cloud dependencies.',
+
+    architecture: [
+      { layer: 'Asset Registry', detail: 'Complete asset lifecycle tracking: acquisition, allocation, maintenance history, and decommission state stored via Prisma ORM' },
+      { layer: 'Kanban Maintenance', detail: 'Drag-and-drop Kanban board for scheduling and tracking maintenance tasks, with status transitions and priority management' },
+      { layer: 'AI Assistant (OLLAMA)', detail: 'Qwen3 model runs locally via OLLAMA, providing context-aware optimization recommendations based on utilization data and maintenance history' },
+      { layer: 'Real-Time Analytics', detail: 'Utilization dashboards with allocation breakdowns, maintenance frequency, and asset health indicators — updated in real-time' },
+      { layer: 'Auth & Security', detail: 'JWT-based authentication with bcryptjs password hashing. All routes protected server-side with role-scoped access' },
+    ],
+
+    features: [
+      'Full asset lifecycle management — acquisition to decommission',
+      'Secure allocation tracking — who has what, and since when',
+      'Kanban-driven maintenance workflow with priority management',
+      'Real-time utilization analytics and asset health dashboards',
+      'AI assistant powered by Qwen3 (OLLAMA) — fully local, no API cost',
+      'Context-aware optimization recommendations from AI',
+      'JWT + bcrypt authentication with protected routes',
+      'Dark/light mode with CSS variables and full responsiveness',
+    ],
+
+    techStack: {
+      'Frontend': ['React 18', 'TypeScript', 'Vite', 'Vanilla CSS', 'React Router DOM'],
+      'Backend': ['Node.js', 'Express', 'TypeScript', 'JWT', 'bcryptjs'],
+      'Database': ['Prisma ORM', 'Schema migrations'],
+      'AI / Local LLM': ['OLLAMA', 'Qwen3', 'Context-aware recommendations'],
+    },
+
+    photos: [
+      { src: assetflowHome },
+      { src: assetflowLogin },
+      { src: assetflowAsset },
+      { src: assetflowReport },
+      { src: assetflowResource },
+      { src: assetflowAiAssistant },
+      { src: assetflowSetting },
     ],
   },
 
@@ -370,65 +440,12 @@ The project was delivered end-to-end: design, development, and deployment, with 
     ],
   },
 
-  {
-    id: 'assetflow',
-    tag: 'AI-Powered · Full-Stack · Asset Management',
-    tagColor: 'violet',
-    title: 'AssetFlow',
-    tagline: 'AI-powered IT asset management for modern organizations',
-    shortBullets: [
-      'Built a full-stack IT asset management platform with Kanban-driven maintenance workflows, real-time utilization analytics, and secure allocation tracking',
-      'Integrated OLLAMA (Qwen3) as a local AI assistant to provide context-aware recommendations for asset optimization — no cloud API required',
-      'Designed with Prisma ORM + JWT auth, TypeScript across the stack, and a fully responsive dark/light mode UI',
-    ],
-    tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'JWT', 'OLLAMA', 'Qwen3', 'Vite'],
-    github: 'https://github.com/hck-anmol/AssetFlow',
-    live: null,
-    accent: '#A78BFA',
 
-    overview: `AssetFlow is an AI-powered IT Asset Management platform designed to help organizations track, allocate, and maintain their assets intelligently. It combines real-time utilization analytics, a Kanban-driven maintenance workflow, and an embedded AI assistant powered by Qwen3 via OLLAMA — all without requiring a paid cloud API.
-
-Built with TypeScript across the full stack, Prisma ORM for schema management, and JWT-based authentication, AssetFlow is engineered for production-grade reliability with a clean, responsive UI that supports dark and light modes.`,
-
-    problem: 'Organizations managing IT assets typically rely on spreadsheets or expensive SaaS tools. There\'s no lightweight, self-hosted solution that combines asset lifecycle tracking, maintenance scheduling, and AI-driven optimization recommendations.',
-
-    solution: 'A self-hosted full-stack platform with a local AI assistant (Qwen3 via OLLAMA), Kanban maintenance workflows, and real-time analytics — giving organizations complete asset visibility and intelligent recommendations without cloud dependencies.',
-
-    architecture: [
-      { layer: 'Asset Registry', detail: 'Complete asset lifecycle tracking: acquisition, allocation, maintenance history, and decommission state stored via Prisma ORM' },
-      { layer: 'Kanban Maintenance', detail: 'Drag-and-drop Kanban board for scheduling and tracking maintenance tasks, with status transitions and priority management' },
-      { layer: 'AI Assistant (OLLAMA)', detail: 'Qwen3 model runs locally via OLLAMA, providing context-aware optimization recommendations based on utilization data and maintenance history' },
-      { layer: 'Real-Time Analytics', detail: 'Utilization dashboards with allocation breakdowns, maintenance frequency, and asset health indicators — updated in real-time' },
-      { layer: 'Auth & Security', detail: 'JWT-based authentication with bcryptjs password hashing. All routes protected server-side with role-scoped access' },
-    ],
-
-    features: [
-      'Full asset lifecycle management — acquisition to decommission',
-      'Secure allocation tracking — who has what, and since when',
-      'Kanban-driven maintenance workflow with priority management',
-      'Real-time utilization analytics and asset health dashboards',
-      'AI assistant powered by Qwen3 (OLLAMA) — fully local, no API cost',
-      'Context-aware optimization recommendations from AI',
-      'JWT + bcrypt authentication with protected routes',
-      'Dark/light mode with CSS variables and full responsiveness',
-    ],
-
-    techStack: {
-      'Frontend': ['React 18', 'TypeScript', 'Vite', 'Vanilla CSS', 'React Router DOM'],
-      'Backend': ['Node.js', 'Express', 'TypeScript', 'JWT', 'bcryptjs'],
-      'Database': ['Prisma ORM', 'Schema migrations'],
-      'AI / Local LLM': ['OLLAMA', 'Qwen3', 'Context-aware recommendations'],
-    },
-
-    photos: [
-      // Add screenshot images to src/data/photos/assetflow/ and import them above
-    ],
-  },
 ];
 
 export const TAG_COLORS = {
-  green:  { bg: 'rgba(52,211,153,0.1)',  color: '#34D399',  border: 'rgba(52,211,153,0.2)' },
-  blue:   { bg: 'rgba(91,141,239,0.1)',  color: '#5B8DEF',  border: 'rgba(91,141,239,0.2)' },
-  violet: { bg: 'rgba(167,139,250,0.1)', color: '#A78BFA',  border: 'rgba(167,139,250,0.2)' },
-  orange: { bg: 'rgba(251,191,36,0.1)',  color: '#FBBF24',  border: 'rgba(251,191,36,0.2)' },
+  green: { bg: 'rgba(52,211,153,0.1)', color: '#34D399', border: 'rgba(52,211,153,0.2)' },
+  blue: { bg: 'rgba(91,141,239,0.1)', color: '#5B8DEF', border: 'rgba(91,141,239,0.2)' },
+  violet: { bg: 'rgba(167,139,250,0.1)', color: '#A78BFA', border: 'rgba(167,139,250,0.2)' },
+  orange: { bg: 'rgba(251,191,36,0.1)', color: '#FBBF24', border: 'rgba(251,191,36,0.2)' },
 };

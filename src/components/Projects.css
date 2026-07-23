@@ -34,10 +34,6 @@
   overflow: hidden;
 }
 
-/* The fifth card spans full width */
-.projects__grid .project-card:last-child {
-  grid-column: 1 / -1;
-}
 
 /* Card */
 .project-card {
