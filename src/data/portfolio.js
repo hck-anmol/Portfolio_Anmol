@@ -83,6 +83,29 @@ export const projects = [
     color: '#a78bfa',
   },
   {
+    id: 'truthlens',
+    emoji: '🔍',
+    title: 'TruthLens',
+    subtitle: 'AI-Powered Fake News Detection Platform',
+    type: ['AI / ML', 'Full-Stack'],
+    typeColors: ['cyan', 'purple'],
+    shortDesc: 'Browser extension + web platform that detects fake news using NLP models and real-time fact-checking — built during Intellify 4.0 National Hackathon (Winner).',
+    description:
+      'TruthLens is an AI-powered misinformation detection platform built at Intellify 4.0 National Hackathon, where it won first place. It combines a browser extension with a web dashboard, using NLP-based classification models to analyze news articles in real-time and flag potentially false or misleading information.',
+    features: [
+      'Real-time article credibility scoring',
+      'NLP-based fake news classification',
+      'Browser extension for in-context analysis',
+      'Source reliability tracking',
+      'Explainable AI — shows why content is flagged',
+    ],
+    tech: ['Fine Tuning', 'Agentic AI', 'RAG', 'CNN', 'React', 'Python', 'FastAPI', 'NLP', 'Scikit-learn', 'Chrome Extension'],
+    github: 'https://github.com/hck-anmol/TruthLens',
+    live: null,
+    featured: true,
+    color: '#22d3ee',
+  },
+  {
     id: 'certifications',
     emoji: '📃',
     title: 'Certifications',
@@ -298,10 +321,10 @@ export const journeyPhases = [
     glowColor: 'rgba(245,158,11,0.4)',
     year: '2025 – 2026',
     title: 'Competitive Programming',
-    subtitle: 'CodeForces Pupil · 200+ CF Problems · CodeChef 3⭐ · LeetCode 160+ · 450+ Total',
+    subtitle: 'CodeForces Pupil · 200+ CF Problems · CodeChef 3⭐ · LeetCode 160+ · 550+ Total',
     description:
-      'Dived deep into competitive programming to sharpen problem-solving skills. Achieved Pupil rank on CodeForces (profile: anmolkjha) with 200+ problems solved, CodeChef 3-star rating, and solved 160+ problems on LeetCode — totalling 450+ problems across platforms spanning dynamic programming, graphs, trees, and system optimization challenges.',
-    highlights: ['CodeForces Pupil — anmolkjha', 'CodeChef 3⭐', 'LeetCode 160+ solved', '450+ Total Problems'],
+      'Dived deep into competitive programming to sharpen problem-solving skills. Achieved Pupil rank on CodeForces (profile: anmolkjha) with 200+ problems solved, CodeChef 3-star rating, and solved 160+ problems on LeetCode — totalling 550+ problems across platforms spanning dynamic programming, graphs, trees, and system optimization challenges.',
+    highlights: ['CodeForces Pupil — anmolkjha', 'CodeChef 3⭐', 'LeetCode 160+ solved', '550+ Total Problems'],
     tags: ['Dynamic Programming', 'Graphs', 'Binary Search', 'Trees', 'Greedy', 'Number Theory'],
   },
   {
@@ -342,6 +365,19 @@ export const journeyPhases = [
       'Expanding into Artificial Intelligence and Machine Learning. Learned RAG (Retrieval-Augmented Generation), Prompt Engineering, and core ML concepts. Exploring computer vision with OpenCV and YOLO-based object detection models, building neural networks with TensorFlow, and integrating AI capabilities into web applications.',
     highlights: ['RAG & Prompt Engineering', 'Core ML Concepts', 'TensorFlow basics', 'OpenCV & YOLO'],
     tags: ['RAG', 'Prompt Engineering', 'TensorFlow', 'OpenCV', 'YOLO', 'Python', 'NumPy', 'Computer Vision', 'Deep Learning'],
+  },
+  {
+    id: 'hackathons',
+    planet: '🏆',
+    planetColor: '#f97316',
+    glowColor: 'rgba(249,115,22,0.4)',
+    year: '2025 – 2026',
+    title: 'Hackathons & Achievements',
+    subtitle: '🏆 Winner · Intellify 4.0 National Hackathon · 2× National Finalist',
+    description:
+      'Won Intellify 4.0 National Hackathon, competing against teams from across the country. Reached finalist stage at two national hackathons — Odoo Hackathon 2026 and Hackatron at IIIT Gwalior — demonstrating consistent performance on the national competitive stage.',
+    highlights: ['🏆 Winner — Intellify 4.0', 'Finalist — Odoo Hackathon 2026', 'Finalist — Hackatron IIIT Gwalior', '3 National Hackathons'],
+    tags: ['Intellify 4.0', 'Odoo Hackathon 2026', 'Hackatron IIIT Gwalior', 'National Winner', 'Finalist'],
   },
 ];
 

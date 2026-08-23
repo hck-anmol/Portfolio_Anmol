@@ -22,9 +22,9 @@ const PHASES = [
   {
     year: '2025',
     title: 'Competitive Programming',
-    subtitle: 'CodeForces Pupil · 200+ CF Problems · CodeChef 3★ · LeetCode 160+ · 450+ Total',
+    subtitle: 'CodeForces Pupil · 200+ CF Problems · CodeChef 3★ · LeetCode 160+ · 550+ Total',
     description:
-      'Achieved Pupil rank on Codeforces (profile: anmolkjha) with 200+ problems solved. CodeChef 3-star rating. Solved 160+ LeetCode problems spanning dynamic programming, graphs, binary search, and greedy optimization — totalling 450+ problems across all platforms.',
+      'Achieved Pupil rank on Codeforces (profile: anmolkjha) with 200+ problems solved. CodeChef 3-star rating. Solved 160+ LeetCode problems spanning dynamic programming, graphs, binary search, and greedy optimization — totalling 550+ problems across all platforms.',
     tags: ['DP', 'Graphs', 'Binary Search', 'Greedy', 'Trees', 'Number Theory'],
     color: '#FBBF24',
   },
@@ -36,6 +36,15 @@ const PHASES = [
       'Learned RAG (Retrieval-Augmented Generation), Prompt Engineering, and core ML concepts. Integrated YOLOv8 vehicle detection into TRAFF-IQ, exploring TensorFlow for neural networks, and building toward ML-augmented web systems.',
     tags: ['RAG', 'Prompt Engineering', 'ML Concepts', 'YOLOv8', 'OpenCV', 'TensorFlow', 'Python'],
     color: '#34D399',
+  },
+  {
+    year: '2025–2026',
+    title: 'Hackathons & Achievements',
+    subtitle: '🏆 Winner · Intellify 4.0 National Hackathon · 2× National Finalist',
+    description:
+      'Won Intellify 4.0 National Hackathon. Reached finalist stage at two national hackathons — Odoo Hackathon 2026 and Hackatron at IIIT Gwalior — competing against hundreds of teams across the country.',
+    tags: ['Intellify 4.0', 'Odoo Hackathon 2026', 'Hackatron IIIT Gwalior', 'National Winner', 'Finalist'],
+    color: '#F97316',
   },
 ];
 

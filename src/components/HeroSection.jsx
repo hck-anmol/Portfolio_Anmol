@@ -184,7 +184,7 @@ export default function HeroSection() {
           variants={item}
           style={{ display: 'flex', gap: '40px', justifyContent: 'center', marginTop: '56px', flexWrap: 'wrap' }}
         >
-          {[['450+', 'Problems Solved'], ['5+', 'Projects Built'], ['Pupil', 'CodeForces Rank']].map(([num, lbl]) => (
+          {[['550+', 'Problems Solved'], ['6+', 'Projects Built'], ['Pupil', 'CodeForces Rank']].map(([num, lbl]) => (
             <div key={lbl} style={{ textAlign: 'center' }}>
               <div style={{
                 fontSize: '22px', fontWeight: 800,

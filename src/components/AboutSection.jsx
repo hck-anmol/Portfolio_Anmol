@@ -144,7 +144,7 @@ export default function AboutSection() {
               variants={fadeUp}
               style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '12px' }}
             >
-              <StatCard num="450+"  label="Problems Solved" />
+              <StatCard num="550+"  label="Problems Solved" />
               <StatCard num="5+"    label="Projects Built" />
               <StatCard num="Pupil" label="CodeForces Rank" />
             </motion.div>

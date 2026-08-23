@@ -247,6 +247,58 @@ Built with TypeScript across the full stack, Prisma ORM for schema management, a
   },
 
   {
+    id: 'truthlens',
+    tag: 'AI / NLP · Chrome Extension · Hackathon Winner',
+    tagColor: 'blue',
+    title: 'TruthLens',
+    tagline: 'Winner — Intellify 4.0 National Hackathon',
+    shortBullets: [
+      'Built an NLP-powered fake news detection platform with a Chrome extension that analyzes article credibility in real-time without leaving the page',
+      'Trained a scikit-learn classification model on a labeled news dataset, served via FastAPI with sub-second inference latency',
+      'Won Intellify 4.0 National Hackathon — judged on technical depth, real-world impact, and live demo performance',
+    ],
+    tech: ['Fine Tuning', 'Agentic AI', 'RAG', 'CNN', 'React', 'Python', 'FastAPI', 'scikit-learn', 'NLP', 'Chrome Extension API', 'GradCam'],
+    github: 'https://github.com/hck-anmol/TruthLens',
+    live: null,
+    accent: '#22d3ee',
+
+    overview: `TruthLens is an AI-powered misinformation detection platform built and shipped at Intellify 4.0 National Hackathon, where it won first place. It combines a Chrome browser extension with a web dashboard, using an NLP classification model to score the credibility of news articles in real-time.
+
+The extension activates on any news article and returns a credibility score, confidence level, and an explanation of why the content was flagged — all without redirecting the user away from the page.`,
+
+    problem: 'Misinformation spreads faster than fact-checkers can respond. Users have no lightweight, in-browser tool that scores credibility without requiring them to copy-paste text into an external site.',
+
+    solution: 'A Chrome extension that directly reads article text from the page, sends it to a FastAPI backend running an NLP classifier, and overlays a credibility badge with reasoning — real-time, no context-switching.',
+
+    architecture: [
+      { layer: 'Chrome Extension', detail: 'Content script extracts article body from the DOM, sends it to the FastAPI backend via fetch, and injects the credibility badge overlay into the page' },
+      { layer: 'NLP Classifier (FastAPI)', detail: 'scikit-learn model trained on a labeled fake/real news dataset. FastAPI serves predictions with confidence scores and key feature explanations' },
+      { layer: 'Feature Extraction', detail: 'TF-IDF vectorization + linguistic feature extraction (sentence structure, source patterns) passed to the classifier for multi-signal scoring' },
+      { layer: 'Web Dashboard', detail: 'React frontend for viewing detailed analysis reports, history of checked articles, and source reliability rankings' },
+    ],
+
+    features: [
+      'In-browser credibility scoring via Chrome extension — no page switching',
+      'NLP classification model with confidence scores',
+      'Explainable AI — highlights why content is flagged',
+      'Sub-second inference via FastAPI backend',
+      'Article history and source reliability dashboard',
+      'Works across major news sites and social media',
+    ],
+
+    techStack: {
+      'Extension': ['Chrome Extension API', 'JavaScript', 'Content Scripts', 'Manifest V3'],
+      'AI / NLP': ['CNN', 'Agentic AI', 'Fine-Tuning', 'Python', 'scikit-learn', 'TF-IDF', 'NLTK', 'Pandas', 'NumPy'],
+      'Backend': ['FastAPI', 'Python', 'Pydantic', 'Uvicorn'],
+      'Frontend': ['React', 'Vite', 'GradCam'],
+    },
+
+    photos: [
+      // Add screenshot images to src/data/photos/truthlens/ and import them above
+    ],
+  },
+
+  {
     id: 'moviebuzz',
     tag: 'Full-Stack · MERN · SQL',
     tagColor: 'violet',

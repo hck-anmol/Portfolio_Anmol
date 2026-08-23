@@ -4,7 +4,7 @@ const STATS = [
   { value: '5+', label: 'Production projects shipped' },
   { value: '8.18', label: 'CPI at IIIT Vadodara' },
   { value: 'Pupil', label: 'CodeForces Rank' },
-  { value: '450+', label: 'Problems solved' },
+  { value: '550+', label: 'Problems solved' },
 ];
 
 export default function About() {
@@ -32,7 +32,7 @@ export default function About() {
             </p>
             <p>
               Also exploring RAG, Prompt Engineering, and core ML concepts. Outside of
-              building, I stay sharp through competitive programming — 450+ problems solved
+              building, I stay sharp through competitive programming — 550+ problems solved
               across Codeforces, CodeChef, and LeetCode.
             </p>
           </div>
